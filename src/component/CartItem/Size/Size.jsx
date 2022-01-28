@@ -1,19 +1,23 @@
-import React, { useCallback, useState, } from 'react';
-
+import React, { useCallback,  useEffect,  useState, } from 'react';
+import { useDispatch } from 'react-redux';
 import s from './size.module.css'
+import { changeIndexSizeSuccess} from '../../../redux/cart-action'
 
 
 
-export default function Size({items, activeStyleSize ="activeSizeItem", styleSize="sizeItem"}) {
-
-   const [activeIndex, setIndex] = useState(0);
+export default function Size({items,  indexSize, activeStyleSize ="activeSizeItem", styleSize="sizeItem"}) {
+    const dispatch = useDispatch();
+   const [activeIndex, setIndex] = useState(indexSize);
    
+    useEffect(() => {
+        dispatch(changeIndexSizeSuccess(activeIndex))
+    }, [dispatch, activeIndex ])
 
     const saveActiveIndex = useCallback(index => {
         setIndex(index);
-       
+        console.log('индекс во время нажатия', activeIndex)
         
-    },[])
+    },[activeIndex])
     
      const makeOptionClassName = useCallback(index => {
     return index === activeIndex ? s[activeStyleSize] : s[styleSize];

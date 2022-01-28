@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import Size from './Size/Size'
+import Size from './Size/Size';
+import{ allSize} from '../../data/allSize.js'
 import Stats from './Stats/Stats';
 import s from './cartItem.module.css'
 
 
 
 
-const CardItem = ({ title,  price, currencu, updateCurrencu, url, counter, increment, decrement, size }) =>{
+const CardItem = ({ title,  price, currencu, indexSize, updateCurrencu, url, counter, increment, decrement }) =>{
 
 
   
@@ -21,11 +22,10 @@ return (
     <p>{title}</p>
       <p onClick={updateCurrencu}>{currencu} {price}</p>
       
-        <Size items={size} activeStyleSize ="activeSizeItem" />
    </div> 
 
 
-
+    <Size items={allSize} indexSize={indexSize }/>
     
     <Stats counter={counter} increment={increment} decrement={decrement}
     />

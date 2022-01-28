@@ -1,0 +1,1 @@
+export const allSize =["S", "M", "XL", "L"]

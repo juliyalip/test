@@ -26,12 +26,11 @@ export default function CartList () {
     return( <>
      
     <ul className={s.cartList}>
-        {items.map(({ id, title, price,  currencu, counter, size}) => (
-            <CardItem key={id}  title={title} url={foto1} size={size}
+        {items.map(({ id, title, price,  currencu, counter, indexSize}) => (
+            <CardItem key={id}  title={title} url={foto1} indexSize={indexSize}
                 price={price} counter={counter} currencu={currencu}
                 increment={() => onIncrement(id)} decrement={() => onDecrement(id)} />
         ))}
         </ul>
     </>)
 }
-

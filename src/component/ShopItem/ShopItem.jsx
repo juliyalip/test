@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams} from "react-router-dom";
+
 import { Link } from 'react-router-dom';
 import CartIcon from './CartIcon';
 import s from './shopItem.module.css'

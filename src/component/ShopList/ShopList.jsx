@@ -24,9 +24,9 @@ const ShopList = ({ title}) => {
     <section>
         {title && <h1>{title}</h1>}
         <ul className={s.shopList}>
-                {items.map(({ id, url, title, currencu, price }) => (
+                {items.map(({ id, url, title, currencu, price,  }) => (
            
-                    <ShopItem key={id} url={foto1} title={title} id={id} currencu={currencu} price={price}
+                    <ShopItem key={id} url={foto1}  title={title} id={id} currencu={currencu} price={price}
                         onAdd={() => { handleAddProduct(id) }} />
         ))}
             </ul>

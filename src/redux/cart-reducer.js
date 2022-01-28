@@ -1,9 +1,10 @@
- import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
+
 
 import {
     addProductSuccess, addProductError,
     incrementCounterSuccess, decrementCounterSuccess,
-    changeCurrentSuccess
+    changeCurrentSuccess, changeIndexSizeSuccess , upDateProduct
 } from './cart-action';
 
 
@@ -16,7 +17,7 @@ export const cartReducer = createReducer([], {
             const filteredSate = state.filter(item => item.id !== duplicate.id)
             const product = {
                 ...duplicate,
-          counter: duplicate.counter + 1
+                counter: duplicate.counter + 1
             }
             return [...filteredSate, product]
         } else {
@@ -40,25 +41,45 @@ export const cartReducer = createReducer([], {
 
     
       
-         [decrementCounterSuccess]: (state, { payload }) => state.map(item => {
-                if (item.id === payload && item.counter > 1) {
+    [decrementCounterSuccess]: (state, { payload }) => state.map(item => {
+        if (item.id === payload && item.counter > 1) {
                    
-                    return {
-                        ...item,
-                    counter: item.counter - 1}
-                } return item
-         }),
+            return {
+                ...item,
+                counter: item.counter - 1
+            }
+        } return item
+    }),
          
-    [changeCurrentSuccess]: (state, { payload }) => state.map(item => 
-      ( {
-            ...item,
-        currencu: payload})
-    )
+    [changeCurrentSuccess]: (state, { payload }) => state.map(item =>
+    ({
+        ...item,
+        currencu: payload
+    })
+    ),
+
+    [changeIndexSizeSuccess]: (state, { payload }) => {
+        
+    }
     
 
         
  
+});
+
+
+export const productReducer = createReducer({}, {
+    [upDateProduct]: (_, { payload }) => ({ ...payload }),
+    [changeCurrentSuccess]: (state, { payload }) => ({
+        ...state,
+        currencu: payload
+    }),
+    [changeIndexSizeSuccess]: (state, { payload }) => ({
+        ...state,
+        indexSize: payload
     })
+
+})
 
 
 
@@ -72,6 +93,3 @@ export const errorCartReduser = createReducer(null, {
 [addProductError]: (_, {payload}) => payload 
 })
 
-
-
-   

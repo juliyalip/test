@@ -5,10 +5,9 @@ export const addProductSuccess = createAction('addProductSuccess',
         payload: {
             id: product.id,
             title: product.title,
-            size: [...product.size],
-          
+          indexSize: product.indexSize,          
             counter: 1,
-            currencu: '$',
+            currencu: "$",
             description: product.description,
             price: product.price,
         }
@@ -25,3 +24,17 @@ export const decrementCounterSuccess = createAction('decrementCounterSuccess');
 
 
 
+export const changeIndexSizeSuccess = createAction('changeIndexSize');
+
+
+
+export const upDateProduct = createAction('upDateProduct', (product) => (
+     { payload: {
+        id: product.id,
+        title: product.title,
+        description: product.description,
+        currencu: product.currencu,
+        price: product.price,
+        indexSize: product.indexSize
+    }})
+)

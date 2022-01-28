@@ -15,4 +15,6 @@ export const getTotalPriceSelector = state => {
 
 
 
-export const getGlobalCurrencuSelector = state=> state.globalCurrencu
+export const getGlobalCurrencuSelector = state => state.globalCurrencu;
+
+export const getProductSelector = state=> state.product
