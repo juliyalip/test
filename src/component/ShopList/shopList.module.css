@@ -1,0 +1,6 @@
+.shopList {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  justify-content: space-between;
+}

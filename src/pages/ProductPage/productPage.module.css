@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+}
+
+.addBtn {
+  display: inline-block;
+  padding: 10px 95px;
+  background-color: rgba(94, 206, 123, 1);
+}
+
+.sectionProduct {
+  margin-left: 50px;
+  width: 350px;
+  border: 1px solid black;
+}

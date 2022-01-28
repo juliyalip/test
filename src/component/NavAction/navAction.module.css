@@ -1,0 +1,29 @@
+.iconList {
+  display: flex;
+}
+
+.iconItem {
+  list-style: none;
+  padding: 5px;
+}
+
+.iconList .iconItem + .iconItem {
+  margin-left: 5px;
+}
+
+.container {
+  position: relative;
+}
+
+.span {
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: -15px;
+}

@@ -1,0 +1,66 @@
+.sizeList {
+  display: flex;
+  padding-left: 0;
+}
+
+.sizeItem {
+  list-style: none;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: gainsboro;
+  color: grey;
+  cursor: pointer;
+}
+
+.activeSizeItem {
+  composes: sizeItem;
+  background-color: white;
+  color: black;
+}
+
+.sizeItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+/*    */
+.sizeItem {
+  list-style: none;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: gainsboro;
+  color: grey;
+  cursor: pointer;
+}
+
+.activeSizeItem {
+  composes: sizeItem;
+  background-color: white;
+  color: black;
+}
+
+.sizeItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+/*   */
+.btnSize {
+  width: 63px;
+  height: 45px;
+  border: 1px solid black;
+  margin-right: 10px;
+  list-style: none;
+  text-align: center;
+}
+.btnSize:not(:last-child) {
+  margin-right: 10px;
+}
+
+.btnSizeActive {
+  composes: btnSize;
+  background-color: black;
+  color: white;
+}

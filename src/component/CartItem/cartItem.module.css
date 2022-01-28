@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  min-width: 330px;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.containerBtnCount {
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+}
+
+.count {
+  display: inline-block;
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
+.btnSizecontainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+}
+
+.img {
+  margin-left: 10px;
+}
+/*     */

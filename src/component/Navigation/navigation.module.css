@@ -1,0 +1,12 @@
+.navList {
+  display: flex;
+  padding-left: 0;
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navList .navItem + .navItem {
+  margin-left: 20px;
+}
