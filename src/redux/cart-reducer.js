@@ -41,16 +41,30 @@ export const cartReducer = createReducer([], {
 
     
       
-    [decrementCounterSuccess]: (state, { payload }) => state.map(item => {
-        if (item.id === payload && item.counter > 1) {
+    [decrementCounterSuccess]: (state, { payload }) => {
+        const filteredState = state.filter(item =>  item.counter > 1)
+    return   filteredState.map(item => {
+        if (item.id === payload ) {
                    
             return {
                 ...item,
                 counter: item.counter - 1
             }
         } return item
-    }),
+    })},
          
+
+   //     [decrementCounterSuccess]: (state, { payload }) => state.map(item => {
+   //      if (item.id === payload && item.counter > 1) {
+   //                 
+   //          return {
+   //              ...item,
+   //              counter: item.counter - 1
+   //          }
+   //      } return item
+   //  }),
+         
+
     [changeCurrentSuccess]: (state, { payload }) => state.map(item =>
     ({
         ...item,

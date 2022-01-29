@@ -4,12 +4,12 @@ import s from './heder.module.css';
 import { ReactComponent as Logo } from './logo.svg';
 
 
-const Header = ({openModal}) => (
+const Header = () => (
     <header >
         <div className={s.container}>
         <Navigation />
         <Logo />
-            <NavAction toggleModal={openModal} />
+            <NavAction  />
             </div>
     </header>
 );

@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {upDateProduct, addProductSuccess} from '../../redux/cart-action'
@@ -12,7 +13,7 @@ import s from './productPage.module.css';
 console.log(items)
 
 export default function ProductPage() {
-  
+  const navigate = useNavigate()
    const dispatch = useDispatch()
 
     const { productId } = useParams();
@@ -26,9 +27,10 @@ export default function ProductPage() {
      const product= useSelector( getProductSelector)
 
     const addProductToCart = () => {
-        dispatch(addProductSuccess(product))
+        dispatch(addProductSuccess(product));
+        navigate('/')
     }
-  console.log(product)
+
  const {title, description, indexSize, price,    currencu} = product
  
     return (

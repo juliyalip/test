@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React from 'react';
 import {
   Routes,
   Route
@@ -10,20 +10,15 @@ import ProductPage from './pages/ProductPage/ProductPage'
 
 
 export default function  App() {
-  const [showModal, setShowModal] = useState(false);
 
-    
-    const openModal = useCallback(() => {
-  setShowModal(prevShowModal =>! prevShowModal)
-}, [])
 
  
    
     return (
-      <Container openModal={openModal} showModal={showModal} >
+      <Container >
       <Routes>
         <Route path="/" element={<AllPage />} />
-          <Route path="/cart" element={<CartPage toggleModal={openModal} />} />
+          <Route path="/cart" element={<CartPage  />} />
           <Route path="/:productId"  element={<ProductPage  />} />
       </Routes>
   
@@ -31,5 +26,4 @@ export default function  App() {
    )
 
 }
-
  
