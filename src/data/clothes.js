@@ -10,27 +10,27 @@ import foto6 from './images/foto6.png';
      {
          id: "001", url: { foto1 }, title: "Apollo Running Short", currencu: "$", price: 50,
         description: "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands"
-   , indexSize: 2},
+   , indexSize: 0, quantity: 20},
      {
          id: "002", url: { foto2 }, title: "Apollo Running Short", currencu: "$", price: 50,
       description: "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands"
-     , indexSize: 2  },
+     , indexSize: 0, quantity: 20  },
      {
          id: "003", url: { foto3 }, title: "Apollo Running Short", currencu: "$", price: 50,
           description: "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands"
-   , indexSize: 2    },
+   , indexSize: 0 , quantity: 0  },
      {
          id: "004", url: { foto4 }, title: "Apollo Running Short", currencu: "$", price: 50,
          description: "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands"
-     , indexSize: 2  },
+     , indexSize: 0 , quantity: 20 },
      {
          id: "005", url: { foto5 }, title: "Apollo Running Short", currencu: "$", price: 50,
           description: "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands"
-    , indexSize: 2   },
+    , indexSize: 0, quantity: 20  },
      {
          id: "006", url: { foto6 }, title: "Apollo Running Short", currencu: "$", price: 50,
         description: "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands"
-    , indexSize: 2  }
+    , indexSize: 0, quantity: 20 }
  ];
  
  export default items;

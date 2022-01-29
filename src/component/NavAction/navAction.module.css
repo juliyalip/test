@@ -5,6 +5,7 @@
 .iconItem {
   list-style: none;
   padding: 5px;
+  cursor: pointer;
 }
 
 .iconList .iconItem + .iconItem {
