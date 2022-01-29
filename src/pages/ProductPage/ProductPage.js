@@ -7,10 +7,13 @@ import { getProductSelector } from '../../redux/cart-selector';
 import items from '../../data/clothes';
 import Size from '../../component/CartItem/Size/Size.jsx';
 import { allSize } from '../../data/allSize';
-import foto1 from '../../data/images/foto1.png'
+import Swiper from '../../component/Swiper/Swiper';
+import foto1 from '../../data/images/foto1.png';
+import red from '../../data/images/red.png';
+import green from '../../data/images/green.png';
 import s from './productPage.module.css';
 
-console.log(items)
+const images =[foto1, red, green,]
 
 export default function ProductPage() {
   const navigate = useNavigate()
@@ -36,7 +39,7 @@ export default function ProductPage() {
     return (
         <div className={s.container} >
              <div className={s.container} >
-           <img src={foto1} alt={title} />
+           <Swiper  images={images} />
            <div className={s.sectionProduct}>
                <h1>{title}</h1>
                <section>

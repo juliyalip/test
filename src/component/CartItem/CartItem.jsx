@@ -21,11 +21,11 @@ return (
     <div>
     <p>{title}</p>
       <p onClick={updateCurrencu}>{currencu} {price}</p>
-      
+         <Size items={allSize} indexSize={indexSize }/> 
    </div> 
 
 
-    <Size items={allSize} indexSize={indexSize }/>
+
     
     <Stats counter={counter} increment={increment} decrement={decrement}
     />

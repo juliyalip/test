@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+}
+
+.activeImg {
+  align-self: flex-start;
+  display: block;
+}
+
+.imgList {
+  padding-left: 0;
+  margin-top: 0;
+  margin-right: 70px;
+}

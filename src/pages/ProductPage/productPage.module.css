@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  padding-top: 35px;
 }
 
 .addBtn {
@@ -16,5 +17,4 @@
 .sectionProduct {
   margin-left: 50px;
   width: 295px;
-  border: 1px solid black;
 }
