@@ -1,20 +1,23 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getTotalPriceSelector, getGlobalCurrencuSelector } from '../../redux/cart-selector';
+import { getTotalPriceSelector, getGlobalCurrencuSelector, getTotalCartSelector } from '../../redux/cart-selector';
 import {changeCurrentSuccess} from '../../redux/cart-action'
 import { createPortal } from "react-dom";
-import { Link } from "react-router-dom";
+
 import CartList from "../CartList/CartList";
 import s from './modalCart.module.css'
 
 const modalRoot = document.querySelector('#modal-root')
 
 export default function ModalCart({ toggleModal }) {
-const navigate = useNavigate()
-    const dispatch = useDispatch();
-    const globalCurrencu  = useSelector(getGlobalCurrencuSelector) 
 
+    const navigate = useNavigate()
+    
+    const dispatch = useDispatch();
+    
+    const globalCurrencu  = useSelector(getGlobalCurrencuSelector) 
+const value = useSelector(getTotalCartSelector)
     useEffect(() => {
         dispatch(changeCurrentSuccess(globalCurrencu));
         
@@ -54,7 +57,7 @@ const navigate = useNavigate()
     return createPortal(
         <div className={s.backDrop} onClick={ clickBackDrop}>
             <div className={s.content}>
-                <h1>My Bag</h1>
+                <p><strong>My Bag </strong><span>{ value} items</span></p>
                 <CartList />
 
                 <p className={s.priceContainer}><strong>Total</strong> <strong >{totalPrice}</strong></p>

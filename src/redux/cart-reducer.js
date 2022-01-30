@@ -4,7 +4,8 @@ import { createReducer } from "@reduxjs/toolkit";
 import {
     addProductSuccess, addProductError,
     incrementCounterSuccess, decrementCounterSuccess,
-    changeCurrentSuccess, changeIndexSizeSuccess , upDateProduct
+    changeCurrentSuccess, upDateProduct, changeSizeSuccess
+   , changeColorSucces
 } from './cart-action';
 
 
@@ -23,7 +24,8 @@ export const cartReducer = createReducer([], {
         } else {
             return [...state, {
                 ...payload,
-                counter: 1
+                counter: 1,
+                sizeIndex: payload.sizeIndex
             }]
         }
     },
@@ -42,27 +44,21 @@ export const cartReducer = createReducer([], {
     
       
     [decrementCounterSuccess]: (state, { payload }) => {
-        const filteredState = state.filter(item =>  item.counter > 1)
-    return   filteredState.map(item => {
-        if (item.id === payload ) {
+       
+       const array = state.map(item => {
+            if (item.id === payload) {
                    
-            return {
-                ...item,
-                counter: item.counter - 1
-            }
-        } return item
-    })},
+                return {
+                    ...item,
+                    counter: item.counter - 1
+                }
+            } return item
+       }); return array.filter(item => item.counter > 0);
+    },
+    
+   
          
 
-   //     [decrementCounterSuccess]: (state, { payload }) => state.map(item => {
-   //      if (item.id === payload && item.counter > 1) {
-   //                 
-   //          return {
-   //              ...item,
-   //              counter: item.counter - 1
-   //          }
-   //      } return item
-   //  }),
          
 
     [changeCurrentSuccess]: (state, { payload }) => state.map(item =>
@@ -72,9 +68,6 @@ export const cartReducer = createReducer([], {
     })
     ),
 
-    [changeIndexSizeSuccess]: (state, { payload }) => {
-        
-    }
     
 
         
@@ -83,27 +76,37 @@ export const cartReducer = createReducer([], {
 
 
 export const productReducer = createReducer({}, {
-    [upDateProduct]: (_, { payload }) => ({ ...payload }),
+    [upDateProduct]: (_, { payload }) => payload,
+
     [changeCurrentSuccess]: (state, { payload }) => ({
         ...state,
         currencu: payload
     }),
-    [changeIndexSizeSuccess]: (state, { payload }) => ({
+
+  
+
+    [changeSizeSuccess]: (state, { payload }) =>( {
         ...state,
-        indexSize: payload
+        sizeIndex: payload
+
+    }),
+    [changeColorSucces]: (state, { payload }) => ({
+        ...state,
+        colorIndex: payload
     })
 
 })
 
-
+///////////////////////////////////////////////////////
 
 export const globalCurrencuReducer = createReducer("$", {
    [changeCurrentSuccess]: (_, {payload})=> payload 
 })    
 
-
+////////////////////////////////////////////////////////////////////
 
 export const errorCartReduser = createReducer(null, {
 [addProductError]: (_, {payload}) => payload 
 })
+
 

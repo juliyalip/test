@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CartIcon from './CartIcon';
 import s from './shopItem.module.css'
 
-const ShopItem = ({ url, title, id, currencu, price, onAdd , quantity}) => {
+const ShopItem = ({ url, title, id, currencu, price, onAdd , openProduct, quantity}) => {
 
     const isInStock = quantity === 0;
     
@@ -16,12 +16,12 @@ const ShopItem = ({ url, title, id, currencu, price, onAdd , quantity}) => {
              
                     
 
-                <Link to={`/${id}`} > <img src={url} className={s.shopImg} alt={title} /></Link> 
+                <Link to={`/${id}`} > <img src={url} className={s.shopImg} alt={title} onClick={ openProduct}/></Link> 
          { isInStock  &&      <p className={s.stock}>OUT OF STOCK</p>}
                
                 
               
-    {  isInStock?    '':      <span onClick={onAdd} className={s.spanCart}><CartIcon /></span>}
+    {  isInStock?    ''    :      <span onClick={onAdd} className={s.spanCart}><CartIcon /></span>}
             </div>
             <p  style={{ color: isInStock ? 'gray' : 'black' }}>{title}</p>
         <p style={{ color: isInStock ? 'gray' : 'black' }}><span>{currencu}</span> <span>{price}</span></p>

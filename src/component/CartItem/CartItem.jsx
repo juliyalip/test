@@ -1,27 +1,27 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import Size from './Size/Size';
-import{ allSize} from '../../data/allSize.js'
+import ButtonSize from './ButtonSize/ButtonSize';
 import Stats from './Stats/Stats';
 import s from './cartItem.module.css'
 
 
 
 
-const CardItem = ({ title,  price, currencu, indexSize, updateCurrencu, url, counter, increment, decrement }) =>{
+const CardItem = ({ title, colorIndex,  price, currencu, sizes, sizeIndex,  updateCurrencu, url, counter, increment, decrement }) =>{
 
-
-  
+  const image = url[colorIndex]
+ 
 return (
  
 
   
   <li className={s.container}>
 
-    <div>
+  
+        <div>
     <p>{title}</p>
       <p onClick={updateCurrencu}>{currencu} {price}</p>
-         <Size items={allSize} indexSize={indexSize }/> 
+   
+     <ButtonSize  array={sizes} sizeIndex={sizeIndex}  styleBtn ="btn" activeStyleBtn="activeBtn" />   
    </div> 
 
 
@@ -31,9 +31,11 @@ return (
     />
    
 
-      <img src={url} width={105} alt={title} className={s.img} />
+      <img src={ image} width={105} alt={title} className={s.img} />
+ 
     
         </li> )}
 
 
 export default CardItem;
+

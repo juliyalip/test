@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import s from './swiper.module.css'
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {changeColorSucces} from '../../redux/cart-action'
+import s from './changeColor.module.css'
 
 
 
 
-export default function Swiper({images}) {
-
+export default function ChangeColor({images}) {
+const dispatch = useDispatch()
      const [activeIndex, setActiveIndex] = useState(0);
         const [items, setItems] = useState(images);
     
@@ -13,12 +15,17 @@ export default function Swiper({images}) {
     
     const image = getActiveImage()
   
+    useEffect(() => {
+        dispatch(changeColorSucces(activeIndex))
+    }, [dispatch, activeIndex])
+    
 
     const onClickImage = indexImg => {
-      setActiveIndex(indexImg)
+        setActiveIndex(indexImg);
+
     }
 
-      
+     console.log(activeIndex) 
         
     return (<div className={s.container}>
     
@@ -32,8 +39,6 @@ export default function Swiper({images}) {
         </ul>
         <img src={image} alt="foto" width={500} className={ s.activeImg}/>
       
-      
-      
-        </div>
+            </div>
     )
 }

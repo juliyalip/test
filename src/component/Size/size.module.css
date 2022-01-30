@@ -1,0 +1,23 @@
+.sizeList {
+  display: flex;
+  padding-left: 0;
+}
+
+.btnSize {
+  width: 63px;
+  height: 45px;
+  border: 1px solid black;
+  margin-right: 10px;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+}
+.btnSize:not(:last-child) {
+  margin-right: 10px;
+}
+
+.btnSizeActive {
+  composes: btnSize;
+  background-color: black;
+  color: white;
+}
