@@ -1,6 +1,6 @@
 .backDrop {
   position: absolute;
-  top: 70px;
+  top: 65px;
   left: 0;
   width: 100vw;
   height: 200%;
@@ -26,10 +26,16 @@
 .btn {
   padding: 9px 35px;
   border: 1px solid black;
+  background-color: white;
+}
+
+.btn:hover,
+.btnZakaz:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .btnZakaz {
   composes: btn;
-  background-color: rgba(94, 206, 123, 1);
+  background-color: var(--primery-color);
   border: none;
 }

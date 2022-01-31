@@ -1,6 +1,7 @@
 .navList {
   display: flex;
   padding-left: 0;
+  position: relative;
 }
 
 .navItem {
@@ -9,4 +10,20 @@
 
 .navList .navItem + .navItem {
   margin-left: 20px;
+}
+
+.activeNav {
+  color: var(--primery-color);
+}
+
+.activeNav::after {
+  content: '';
+  position: absolute;
+  line-height: 50px;
+  top: 200%;
+  left: -5px;
+  width: 45%;
+  height: 2px;
+  background-color: var(--primery-color);
+  border-radius: 2px;
 }

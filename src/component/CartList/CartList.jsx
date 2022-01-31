@@ -1,5 +1,4 @@
 import React, {  useCallback } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { getCartSelector } from '../../redux/cart-selector';
 import {  incrementCounterSuccess, decrementCounterSuccess } from '../../redux/cart-action.js'
@@ -26,12 +25,12 @@ import s from './cartList.module.css'
   
   
       return( <>
-       
+          
       <ul className={s.cartList}>
-              {items.map(({ id, title, price, url, currencu, counter,  sizes, colorIndex, sizeIndex }) => (
+              {items.map(({ id, title, price, url,  currencu, counter,  sizes, colorIndex, sizeIndex }) => (
               
               <CardItem key={id}  title={title} url={url}  sizeIndex={sizeIndex} colorIndex={colorIndex}
-                  price={price} counter={counter} currencu={currencu} sizes={sizes}
+                  price={price} counter={counter} currencu={currencu} sizes={sizes} 
                   increment={() => onIncrement(id)} decrement={() => onDecrement(id)} />
           ))}
           </ul>

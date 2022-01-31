@@ -35,7 +35,10 @@ return (
       <img src={ image} width={105} alt={title} className={s.img} />
  
     
-        </li> )}
+    </li>)
+}
+        
+
 CardItem.propTypes = {
   title: PropTypes.string,
   colorIndex: PropTypes.number,
@@ -46,7 +49,8 @@ CardItem.propTypes = {
   url: PropTypes.arrayOf(PropTypes.string),
   counter: PropTypes.number,
   increment: PropTypes.func,
-  decrement: PropTypes.func
+  decrement: PropTypes.func,
+  
 }
 
 export default CardItem;

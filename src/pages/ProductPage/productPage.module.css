@@ -7,6 +7,7 @@
   display: inline-block;
   padding: 10px 95px;
   background-color: rgba(94, 206, 123, 1);
+  color: white;
   cursor: pointer;
 }
 
@@ -15,6 +16,10 @@
 }
 
 .sectionProduct {
-  margin-left: 50px;
+  margin-left: 60px;
   width: 295px;
+}
+
+.sectionTitle {
+  margin-top: 50px;
 }

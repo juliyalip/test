@@ -60,15 +60,16 @@ const value = useSelector(getTotalCartSelector)
     return createPortal(
         <div className={s.backDrop} onClick={ clickBackDrop}>
             <div className={s.content}>
-                <p><strong>My Bag </strong><span>{ value} items</span></p>
-                <CartList />
+                <p><strong>My Bag </strong><span>{value} items</span></p>
+                
+                <CartList  />
 
                 <p className={s.priceContainer}><strong>Total</strong> <strong >{totalPrice}</strong></p>
                 
 
                 <div className={s.priceContainer}>
-                    <button type="button" className={s.btn} onClick={getCartLink}>VIEW BAG</button>
-                    <button type="button" className={s.btnZakaz} >CHECK OUT</button>
+                    <p className={s.btn} onClick={getCartLink}>VIEW BAG</p>
+                    <p className={s.btnZakaz} >CHECK OUT</p>
                    
                    
                 </div>

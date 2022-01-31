@@ -18,8 +18,8 @@ const activBtn = sizes[activeIndex]
        
         <div>
       
-        <span  className={s[activeStyleBtn]}>{activBtn}</span>
-        <span   className={s[styleBtn]}>{ filterBtn }</span>
+        <span className={s[activeStyleBtn]}>{activBtn}</span>
+        <span className={s[styleBtn]}>{ filterBtn }</span>
         </div>
         </>
         
@@ -29,8 +29,8 @@ const activBtn = sizes[activeIndex]
 ButtonSize.propTypes = {
     array: PropTypes.arrayOf(PropTypes.string),
     sizeIndex: PropTypes.number,
-    styleBtn: PropTypes.oneOf(['btn',' bigBtn']),
-    activeStyleBtn: PropTypes.oneOf(['activeBtn', 'activeBigBtn'])
+    styleBtn: PropTypes.string,
+   activeStyleBtn: PropTypes.string
 }
 
 export default ButtonSize;

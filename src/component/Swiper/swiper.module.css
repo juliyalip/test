@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  margin-left: auto;
+}
+
+.containerSpan {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.span {
+  padding: 10px;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.span:not(:last-child) {
+  margin-right: auto;
+}

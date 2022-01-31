@@ -31,16 +31,16 @@ export default function ProductPage() {
       
       
            <div className={s.sectionProduct}>
-               <h1>{title}</h1>
+               <h2>{title}</h2>
                       
-               <section>
+               <section className={s.sectionTitle}>
                           
                    <h2>SIZE</h2>
                    <Size items={sizes} sizeIndex={sizeIndex} />
                                                       
                                
                </section>
-               <section>
+               <section className={s.sectionTitle}>
                    <h2>PRICE</h2>
                    <p><span>{currencu} </span><span>{price}</span></p>
                </section>
