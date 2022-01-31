@@ -16,7 +16,7 @@ export const changeCurrentSuccess = createAction('changeCarrent')
 export const incrementCounterSuccess = createAction('incrementCounterSuccess');
 export const decrementCounterSuccess = createAction('decrementCounterSuccess');
 
-export const upDateProduct = createAction('upDateProduct',  product => ({
+export const openProductSuccess = createAction('upDateProduct',  product => ({
         payload: {
           ...product,        
           

@@ -1,10 +1,10 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import CartIcon from './CartIcon';
 import s from './shopItem.module.css'
 
-const ShopItem = ({ url, title, id, currencu, price, onAdd , openProduct, quantity}) => {
+const ShopItem = ({ url, title, id, currencu, price, openProduct, quantity}) => {
 
     const isInStock = quantity === 0;
     
@@ -16,12 +16,14 @@ const ShopItem = ({ url, title, id, currencu, price, onAdd , openProduct, quanti
              
                     
 
-                <Link to={`/${id}`} > <img src={url} className={s.shopImg} alt={title} onClick={ openProduct}/></Link> 
+              <img src={url} className={s.shopImg} alt={title} />
          { isInStock  &&      <p className={s.stock}>OUT OF STOCK</p>}
                
                 
               
-    {  isInStock?    ''    :      <span onClick={onAdd} className={s.spanCart}><CartIcon /></span>}
+                {isInStock ? '' : <Link to={`/${id}`}>
+                    <span onClick={openProduct} className={s.spanCart}><CartIcon /></span>
+                </Link>}
             </div>
             <p  style={{ color: isInStock ? 'gray' : 'black' }}>{title}</p>
         <p style={{ color: isInStock ? 'gray' : 'black' }}><span>{currencu}</span> <span>{price}</span></p>
@@ -29,6 +31,17 @@ const ShopItem = ({ url, title, id, currencu, price, onAdd , openProduct, quanti
      
       
     </li>
-);}
+    )
+}
+
+ShopItem.propTypes = {
+    url: PropTypes.string,
+    title: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    currencu: PropTypes.string,
+    price: PropTypes.number,
+    openProduct: PropTypes.func.isRequired,
+   quantity: PropTypes.number
+}
 
 export default ShopItem ;

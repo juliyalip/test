@@ -17,3 +17,22 @@
   background-color: white;
   color: black;
 }
+
+.bigBtn {
+  display: inline-block;
+  width: 65px;
+  height: 45px;
+  border: 1px solid black;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bigBtn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.activeBigBtn {
+  composes: bigBtn;
+  background-color: black;
+  color: white;
+}

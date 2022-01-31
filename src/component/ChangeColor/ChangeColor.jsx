@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {changeColorSucces} from '../../redux/cart-action'
 import s from './changeColor.module.css'
@@ -6,7 +7,7 @@ import s from './changeColor.module.css'
 
 
 
-export default function ChangeColor({images}) {
+function ChangeColor({images}) {
 const dispatch = useDispatch()
      const [activeIndex, setActiveIndex] = useState(0);
         const [items, setItems] = useState(images);
@@ -42,3 +43,10 @@ const dispatch = useDispatch()
             </div>
     )
 }
+
+ChangeColor.propTypes = {
+    images: PropTypes.arrayOf(PropTypes.string)
+}
+
+
+export default ChangeColor;

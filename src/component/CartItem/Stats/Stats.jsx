@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from '../cartItem.module.css'
 
-export default function Stats({ increment, decrement, counter }) {
+ function Stats({ increment, decrement, counter }) {
 
     return (
         <>
@@ -18,4 +19,14 @@ export default function Stats({ increment, decrement, counter }) {
                 onClick={decrement}>-</button>
             </div>
             </>)
+};
+
+
+Stats.propTypes = {
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    counter: PropTypes.number.isRequired
 }
+
+
+export default Stats;

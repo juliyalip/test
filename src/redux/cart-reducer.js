@@ -4,7 +4,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import {
     addProductSuccess, addProductError,
     incrementCounterSuccess, decrementCounterSuccess,
-    changeCurrentSuccess, upDateProduct, changeSizeSuccess
+    changeCurrentSuccess,openProductSuccess , changeSizeSuccess
    , changeColorSucces
 } from './cart-action';
 
@@ -76,7 +76,7 @@ export const cartReducer = createReducer([], {
 
 
 export const productReducer = createReducer({}, {
-    [upDateProduct]: (_, { payload }) => payload,
+    [openProductSuccess ]: (_, { payload }) => payload,
 
     [changeCurrentSuccess]: (state, { payload }) => ({
         ...state,

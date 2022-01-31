@@ -5,13 +5,12 @@ import { getCartSelector } from '../../redux/cart-selector';
 import {  incrementCounterSuccess, decrementCounterSuccess } from '../../redux/cart-action.js'
 import CardItem from '../CartItem/CartItem';
 import s from './cartList.module.css'
-import foto1 from '../../data/images/foto1.png';
 
 
 
 
 
-  export default function CartList () {
+ function CartList () {
   
       const dispatch = useDispatch();
       const items = useSelector(getCartSelector);
@@ -37,5 +36,8 @@ import foto1 from '../../data/images/foto1.png';
           ))}
           </ul>
       </>)
-  }
+}
   
+
+  
+export default CartList;

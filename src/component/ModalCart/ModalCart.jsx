@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getTotalPriceSelector, getGlobalCurrencuSelector, getTotalCartSelector } from '../../redux/cart-selector';
@@ -10,7 +11,9 @@ import s from './modalCart.module.css'
 
 const modalRoot = document.querySelector('#modal-root')
 
-export default function ModalCart({ toggleModal }) {
+
+
+function ModalCart({ toggleModal }) {
 
     const navigate = useNavigate()
     
@@ -74,4 +77,10 @@ const value = useSelector(getTotalCartSelector)
             
         </div>, modalRoot
     )
+};
+
+ModalCart.propTypes = {
+    toggleModal: PropTypes.func.isRequired
 }
+
+export default ModalCart;

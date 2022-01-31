@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import s from './ButtonSize.module.css'
 
 
-export default function ButtonSize ({array, sizeIndex, styleBtn, activeStyleBtn}) {
+ function ButtonSize ({array, sizeIndex, styleBtn, activeStyleBtn}) {
    
    
-    const [sizes, setSizes] = useState(array);
+    const sizes =array
    
     const activeIndex = sizeIndex
  
@@ -13,10 +14,7 @@ export default function ButtonSize ({array, sizeIndex, styleBtn, activeStyleBtn}
 const activBtn = sizes[activeIndex]
  const filterBtn = sizes.filter(item => item !== activBtn).slice(0, 1)
     
-  
-    
-
-    return (<>
+     return (<>
        
         <div>
       
@@ -26,6 +24,15 @@ const activBtn = sizes[activeIndex]
         </>
         
     )
-} 
+};
+
+ButtonSize.propTypes = {
+    array: PropTypes.arrayOf(PropTypes.string),
+    sizeIndex: PropTypes.number,
+    styleBtn: PropTypes.oneOf(['btn',' bigBtn']),
+    activeStyleBtn: PropTypes.oneOf(['activeBtn', 'activeBigBtn'])
+}
+
+export default ButtonSize;
 
 
