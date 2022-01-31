@@ -28,7 +28,7 @@
   border-radius: 2px;
 }
 
-.nav {
+.navItem > .nav {
   text-decoration: none;
   color: black;
 }
