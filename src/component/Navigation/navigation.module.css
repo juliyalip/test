@@ -1,11 +1,11 @@
 .navList {
   display: flex;
   padding-left: 0;
-  position: relative;
 }
 
 .navItem {
   list-style: none;
+  position: relative;
 }
 
 .navList .navItem + .navItem {
@@ -21,14 +21,14 @@
   position: absolute;
   line-height: 50px;
   top: 200%;
-  left: -5px;
-  width: 45%;
+  left: -4px;
+  width: 120%;
   height: 2px;
   background-color: var(--primery-color);
   border-radius: 2px;
 }
 
-.navItem > .nav {
+.navList .nav {
   text-decoration: none;
   color: black;
 }
