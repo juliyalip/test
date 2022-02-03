@@ -1,14 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import {memo} from 'react'
 import s from './navigation.module.css'
-const Navigation = () => (
-    <nav>
+const Navigation = () => {
+
+    const onClick =(navData) => (navData.isActive ? s.activeNav : s.nav)
+ return  ( <nav>
         <ul className={s.navList}>
-            <li className={s.navItem}><NavLink className={(navData) => (navData.isActive ? s.activeNav : s.nav)} to="/">WOMAN</NavLink></li>
-            <li className={s.navItem}><NavLink  className={(navData) => (navData.isActive ? s.activeNav : s.nav)}  to="/men">MEN</NavLink></li>
-            <li className={s.navItem}><NavLink  className={(navData) => (navData.isActive ? s.activeNav : s.nav)}  to="/kids">KIDS</NavLink></li>
+            <li className={s.navItem}><NavLink className={onClick} to="/">WOMAN</NavLink></li>
+            <li className={s.navItem}><NavLink  className={onClick}  to="/men">MEN</NavLink></li>
+            <li className={s.navItem}><NavLink  className={onClick}  to="/kids">KIDS</NavLink></li>
         </ul>
-    </nav>)
+    </nav>)}
 
 
 export default memo(Navigation) ;
