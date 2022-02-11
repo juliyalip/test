@@ -9,14 +9,7 @@ import s from './cartPage.module.css'
 export default function CartPage (){
  
         const products = useSelector(getCartSelector);
-       
-             
-        
-    
 
-      
-   
-   
   return (
           <section className={s.allSection}>
                   

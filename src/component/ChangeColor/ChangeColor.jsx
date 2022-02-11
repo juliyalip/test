@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {changeColorSucces} from '../../redux/cart-action'
-import s from './changeColor.module.css'
+import s from './changeColor.module.css';
+
 
 
 
